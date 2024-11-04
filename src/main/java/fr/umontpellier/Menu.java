@@ -1,10 +1,14 @@
 package fr.umontpellier;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.time.LocalDate;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 public class Menu {
+    private static final Logger logger = LogManager.getLogger(Menu.class);
     private ProductRepository repository;
 
     public Menu(ProductRepository repository) {
@@ -12,6 +16,7 @@ public class Menu {
     }
 
     public void start() {
+        logger.info("Menu started");
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("\n1. Display products");
@@ -23,21 +28,28 @@ public class Menu {
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
 
+            logger.info("User selected option: {}", choice);
+
             switch (choice) {
                 case 1:
+                    logger.debug("Displaying all products");
                     repository.displayProducts();
                     break;
                 case 2:
+                    logger.debug("User chose to fetch a product by ID");
                     System.out.print("Enter product ID: ");
                     int fetchId = scanner.nextInt();
                     try {
                         Product product = repository.getProductById(fetchId);
+                        logger.info("Product found: {}", product.getName());
                         System.out.println("Product found: " + product.getName() + " - Price: " + product.getPrice() + " - Expiry: " + product.getExpirationDate());
                     } catch (NoSuchElementException e) {
+                        logger.warn("No product found with ID {}", fetchId);
                         System.out.println(e.getMessage());
                     }
                     break;
                 case 3:
+                    logger.debug("User chose to add a new product");
                     System.out.print("Enter product ID: ");
                     int id = scanner.nextInt();
                     System.out.print("Enter product name: ");
@@ -48,8 +60,10 @@ public class Menu {
                     String date = scanner.next();
                     try {
                         repository.addProduct(new Product(id, name, price, LocalDate.parse(date)));
+                        logger.info("Product added successfully: {}", name);
                         System.out.println("Product added successfully.");
                     } catch (IllegalArgumentException e) {
+                        logger.error("Failed to add product: {}", e.getMessage());
                         System.out.println(e.getMessage());
                     }
                     break;
