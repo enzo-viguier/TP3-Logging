@@ -9,48 +9,52 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 
 public class ProductRepository {
-    private Map<Integer, Product> products = new HashMap<>();
-    private static final Logger logger = LogManager.getLogger(Menu.class);
+    private java.util.Map<java.lang.Integer, fr.umontpellier.Product> products = new java.util.HashMap<>();
 
+    private static final org.apache.logging.log4j.Logger logger = org.apache.logging.log4j.LogManager.getLogger(fr.umontpellier.ProductRepository.class);
 
-    public void addProduct(Product product) throws IllegalArgumentException {
+    public void addProduct(fr.umontpellier.Product product) throws java.lang.IllegalArgumentException {
+        logger.info("Executing method: addProduct");
         if (products.containsKey(product.getId())) {
-            logger.error("Failed to add product: {}", new IllegalArgumentException("Product with ID " + product.getId() + " already exists."));
+            fr.umontpellier.ProductRepository.logger.error("Failed to add product: {}", new java.lang.IllegalArgumentException(("Product with ID " + product.getId()) + " already exists."));
         }
-        logger.info("Product added successfully: {}", product.getName());
+        fr.umontpellier.ProductRepository.logger.info("Product added successfully: {}", product.getName());
         products.put(product.getId(), product);
     }
 
-    public Product getProductById(int id) throws NoSuchElementException {
+    public fr.umontpellier.Product getProductById(int id) throws java.util.NoSuchElementException {
+        logger.info("Executing method: getProductById");
         if (!products.containsKey(id)) {
-            logger.warn("No product found with ID {}", id);
-            throw new NoSuchElementException("No product found with ID " + id);
+            fr.umontpellier.ProductRepository.logger.warn("No product found with ID {}", id);
+            throw new java.util.NoSuchElementException("No product found with ID " + id);
         }
-        logger.info("Product found: {}", products.get(id).getName());
+        fr.umontpellier.ProductRepository.logger.info("Product found: {}", products.get(id).getName());
         return products.get(id);
     }
 
-    public void updateProduct(int id, double newPrice, LocalDate newExpirationDate) throws NoSuchElementException {
-        Product product = getProductById(id);
+    public void updateProduct(int id, double newPrice, java.time.LocalDate newExpirationDate) throws java.util.NoSuchElementException {
+        logger.info("Executing method: updateProduct");
+        fr.umontpellier.Product product = getProductById(id);
         product.setPrice(newPrice);
         product.setExpirationDate(newExpirationDate);
     }
 
-    public void deleteProduct(int id) throws NoSuchElementException {
+    public void deleteProduct(int id) throws java.util.NoSuchElementException {
+        logger.info("Executing method: deleteProduct");
         if (!products.containsKey(id)) {
-            throw new NoSuchElementException("No product found with ID " + id);
+            throw new java.util.NoSuchElementException("No product found with ID " + id);
         }
         products.remove(id);
     }
 
     public void displayProducts() {
-        logger.debug("Displaying all products");
+        logger.info("Executing method: displayProducts");
+        fr.umontpellier.ProductRepository.logger.debug("Displaying all products");
         if (products.isEmpty()) {
-            System.out.println("No products available.");
+            java.lang.System.out.println("No products available.");
         } else {
             products.values().forEach(product -> {
-                System.out.println("ID: " + product.getId() + ", Name: " + product.getName() +
-                        ", Price: " + product.getPrice() + ", Expiration Date: " + product.getExpirationDate());
+                java.lang.System.out.println((((((("ID: " + product.getId()) + ", Name: ") + product.getName()) + ", Price: ") + product.getPrice()) + ", Expiration Date: ") + product.getExpirationDate());
             });
         }
     }
