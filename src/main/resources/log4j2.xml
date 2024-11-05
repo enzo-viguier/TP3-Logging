@@ -18,7 +18,7 @@
             <AppenderRef ref="FileAppender"/>
         </Logger>
 
-        <!-- Logger spécifique pour la classe Menu -->
+<!--         Logger spécifique pour la classe Menu-->
 <!--        <Logger name="fr.umontpellier.Menu" level="debug" additivity="false">-->
 <!--            <AppenderRef ref="Console"/>-->
 <!--        </Logger>-->
