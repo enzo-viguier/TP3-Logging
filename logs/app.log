@@ -3,3 +3,664 @@
 2024-11-05 08:31:48 DEBUG Menu - User chose to add a new product
 2024-11-05 08:31:55 INFO  Menu - Product added successfully: Pain
 2024-11-05 08:31:57 INFO  Menu - User selected option: 6
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 6
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 7
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 9
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 5 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 5 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 9
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 20 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 55 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 INFO  Menu - Product found: Tea
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 9
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Apple
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 5 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 7
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 7
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 10
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Apple
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 53 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 90 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 INFO  Menu - Product found: Salt
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 1
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 93 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 1
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 9
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 10
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 55 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 63 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 6
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 1
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 6
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 9
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Apple
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 7
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Cereal
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 27 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 27 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 47 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 45 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 10
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 21 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 53 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Cereal
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 INFO  Menu - Product found: Pepper
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 73 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 27 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 54 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product found: Pepper
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 1
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 1
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 7
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 7
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 77 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 1
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 9
+2024-11-05 08:45:29 INFO  Menu - Product found: Pepper
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 90 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 INFO  Menu - Product found: Banana
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product found: Salt
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 53 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 INFO  Menu - Product found: Pepper
+2024-11-05 08:45:29 INFO  Menu - Product found: Banana
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 57 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Cereal
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 77 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 30 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 56 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 17 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Apple
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 8
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 8
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 73 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 INFO  Menu - Product found: Salt
+2024-11-05 08:45:29 INFO  Menu - Product found: Salt
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 19 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 96 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 INFO  Menu - Product found: Pepper
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 27 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 73 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 7
+2024-11-05 08:45:29 INFO  Menu - Product found: Salt
+2024-11-05 08:45:29 INFO  Menu - Product found: Tea
+2024-11-05 08:45:29 INFO  Menu - Product found: Pepper
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 13 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 48 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Cereal
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 9
+2024-11-05 08:45:29 INFO  Menu - Product found: Apple
+2024-11-05 08:45:29 INFO  Menu - Product found: Tea
+2024-11-05 08:45:29 INFO  Menu - Product found: Banana
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 57 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Apple
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 40 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 77 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 47 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 73 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 8
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 10
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 73 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Cereal
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 7
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 83 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 46 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 46 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 61 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product found: Pepper
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 40 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 10
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 8
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 7
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 10
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Cereal
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Cereal
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 40 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 10
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 64 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 24 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 100 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 90 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Cereal
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 62 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 INFO  Menu - Product found: Orange
+2024-11-05 08:45:29 INFO  Menu - Product found: Orange
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 93 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 96 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Sugar
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 9
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 64 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 46 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Orange
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 33 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 10
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 80 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 94 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Apple
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Coffee
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 95 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 94 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 71 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Apple
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 55 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Tea
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 48 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Apple
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Salt
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 3 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.addMultipleProducts(TestScenarios.java:134) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:80) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pasta
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Pepper
+2024-11-05 08:45:29 DEBUG Menu - Displaying all products
+2024-11-05 08:45:29 ERROR Menu - Failed to add product: {}
+java.lang.IllegalArgumentException: Product with ID 19 already exists.
+	at fr.umontpellier.ProductRepository.addProduct(ProductRepository.java:18) [classes/:?]
+	at fr.umontpellier.TestScenarios.addRandomProduct(TestScenarios.java:101) [classes/:?]
+	at fr.umontpellier.TestScenarios.executeUserScenarios(TestScenarios.java:53) [classes/:?]
+	at fr.umontpellier.TestScenarios.main(TestScenarios.java:40) [classes/:?]
+2024-11-05 08:45:29 INFO  Menu - Product added successfully: Banana
+2024-11-05 08:45:29 INFO  Menu - Product found: Pasta
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 6
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 9
+2024-11-05 08:45:29 WARN  Menu - No product found with ID 7

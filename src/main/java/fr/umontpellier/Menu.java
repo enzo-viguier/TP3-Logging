@@ -32,7 +32,6 @@ public class Menu {
 
             switch (choice) {
                 case 1:
-                    logger.debug("Displaying all products");
                     repository.displayProducts();
                     break;
                 case 2:
@@ -41,10 +40,8 @@ public class Menu {
                     int fetchId = scanner.nextInt();
                     try {
                         Product product = repository.getProductById(fetchId);
-                        logger.info("Product found: {}", product.getName());
                         System.out.println("Product found: " + product.getName() + " - Price: " + product.getPrice() + " - Expiry: " + product.getExpirationDate());
                     } catch (NoSuchElementException e) {
-                        logger.warn("No product found with ID {}", fetchId);
                         System.out.println(e.getMessage());
                     }
                     break;
@@ -60,10 +57,8 @@ public class Menu {
                     String date = scanner.next();
                     try {
                         repository.addProduct(new Product(id, name, price, LocalDate.parse(date)));
-                        logger.info("Product added successfully: {}", name);
                         System.out.println("Product added successfully.");
                     } catch (IllegalArgumentException e) {
-                        logger.error("Failed to add product: {}", e.getMessage());
                         System.out.println(e.getMessage());
                     }
                     break;
