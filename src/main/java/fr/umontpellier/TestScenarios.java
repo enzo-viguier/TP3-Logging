@@ -77,32 +77,39 @@ public class TestScenarios {
 
     public static void main(String[] args) {
         ProductRepository repository = new ProductRepository();
+        Menu menu = new Menu(repository);
 
-        // Add some initial products
-        premiumProducts.forEach(p -> {
+        // Add initial products
+        for (Product product : premiumProducts) {
             try {
-                repository.addProduct(p);
+                repository.addProduct(product);
             } catch (IllegalArgumentException e) {
                 // Ignore duplicates
             }
-        });
+        }
 
-        regularProducts.forEach(p -> {
+        for (Product product : regularProducts) {
             try {
-                repository.addProduct(p);
+                repository.addProduct(product);
             } catch (IllegalArgumentException e) {
                 // Ignore duplicates
             }
-        });
+        }
 
         // Execute scenarios for each user
         for (TestUser testUser : users) {
-            System.out.println("\nExecuting scenarios for user: " + testUser.user.getName());
+            menu.setCurrentUser(testUser.user);
             executeUserScenarios(repository, testUser);
+            try {
+                Thread.sleep(100); // Pause between users
+            } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
+            }
         }
     }
 
     private static void executeUserScenarios(ProductRepository repository, TestUser testUser) {
+        // Each user performs about 20 operations
         for (int i = 0; i < 20; i++) {
             try {
                 double action = random.nextDouble();
@@ -116,6 +123,8 @@ public class TestScenarios {
                     executePremiumSearch(repository, testUser);
                 }
 
+                // Simulate thinking time between operations
+
             } catch (Exception e) {
                 System.out.println("Error in scenario: " + e.getMessage());
             }
@@ -126,16 +135,14 @@ public class TestScenarios {
         int subOperation = random.nextInt(2);
         switch (subOperation) {
             case 0:
-                System.out.println(testUser.user.getName() + " viewing all products");
                 repository.displayProducts();
                 break;
             case 1:
                 int randomId = random.nextInt(10) + 1;
-                System.out.println(testUser.user.getName() + " fetching product with ID: " + randomId);
                 try {
-                    repository.getProductById(randomId);
+                    Product product = repository.getProductById(randomId);
                 } catch (Exception e) {
-                    System.out.println("Product not found: " + e.getMessage());
+                    // Log handled in repository
                 }
                 break;
         }
@@ -159,13 +166,10 @@ public class TestScenarios {
     private static void executePremiumSearch(ProductRepository repository, TestUser testUser) {
         // Premium users tend to look at expensive products
         int productId = random.nextInt(5) + 1; // IDs 1-5 are premium products
-        System.out.println(testUser.user.getName() + " searching premium product with ID: " + productId);
         try {
             Product product = repository.getProductById(productId);
-            System.out.println(testUser.user.getName() + " viewed premium product: " + product.getName() +
-                    " (Price: " + product.getPrice() + ")");
         } catch (Exception e) {
-            System.out.println("Premium product not found: " + e.getMessage());
+            // Log handled in repository
         }
     }
 
@@ -179,9 +183,8 @@ public class TestScenarios {
         try {
             Product product = new Product(id, name, price, expiryDate);
             repository.addProduct(product);
-            System.out.println(user.getName() + " added product: " + name + " (Price: " + price + ")");
         } catch (IllegalArgumentException e) {
-            System.out.println("Failed to add product: " + e.getMessage());
+            // Log handled in repository
         }
     }
 
@@ -192,9 +195,8 @@ public class TestScenarios {
 
         try {
             repository.updateProduct(id, newPrice, newDate);
-            System.out.println(user.getName() + " updated product ID: " + id + " (New Price: " + newPrice + ")");
         } catch (Exception e) {
-            System.out.println("Failed to update product: " + e.getMessage());
+            // Log handled in repository
         }
     }
 
@@ -202,9 +204,8 @@ public class TestScenarios {
         int id = random.nextInt(10) + 1;
         try {
             repository.deleteProduct(id);
-            System.out.println(user.getName() + " deleted product ID: " + id);
         } catch (Exception e) {
-            System.out.println("Failed to delete product: " + e.getMessage());
+            // Log handled in repository
         }
     }
 }

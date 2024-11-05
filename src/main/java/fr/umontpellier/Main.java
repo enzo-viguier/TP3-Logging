@@ -1,7 +1,6 @@
 package fr.umontpellier;
 
 import fr.umontpellier.spoon.LogParser;
-import fr.umontpellier.spoon.LoggingProcessor;
 import org.apache.logging.log4j.LogManager;
 
 import org.apache.logging.log4j.Logger;
@@ -15,10 +14,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Launcher launcher = new Launcher();
-        launcher.addProcessor(new LoggingProcessor());
-        launcher.addInputResource("./src/main/java");
-        launcher.run();
+
 
         LogParser parser = new LogParser();
         parser.parseLogs("./logs/app.log");

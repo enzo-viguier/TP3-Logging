@@ -10,13 +10,25 @@ import java.util.Scanner;
 public class Menu {
     private static final Logger logger = LogManager.getLogger(Menu.class);
     private ProductRepository repository;
+    private User currentUser; // Ajout de l'utilisateur courant
 
     public Menu(ProductRepository repository) {
         this.repository = repository;
     }
 
+    // Nouvelle méthode pour définir l'utilisateur courant
+    public void setCurrentUser(User user) {
+        this.currentUser = user;
+        logger.info("User {} logged in", user.getName());
+    }
+
     public void start() {
-        logger.info("Menu started");
+        if (currentUser == null) {
+            logger.error("No user set for this session");
+            return;
+        }
+
+        logger.info("Menu started for user {}", currentUser.getName());
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("\n1. Display products");
@@ -28,25 +40,28 @@ public class Menu {
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
 
-            logger.info("User selected option: {}", choice);
+            logger.info("User {} selected option: {}", currentUser.getName(), choice);
 
             switch (choice) {
                 case 1:
+                    logger.debug("User {} viewing all products", currentUser.getName());
                     repository.displayProducts();
                     break;
                 case 2:
-                    logger.debug("User chose to fetch a product by ID");
+                    logger.debug("User {} attempting to fetch a product", currentUser.getName());
                     System.out.print("Enter product ID: ");
                     int fetchId = scanner.nextInt();
                     try {
                         Product product = repository.getProductById(fetchId);
-                        System.out.println("Product found: " + product.getName() + " - Price: " + product.getPrice() + " - Expiry: " + product.getExpirationDate());
+                        logger.info("User {} fetched product: {} (Price: {})",
+                                currentUser.getName(), product.getName(), product.getPrice());
                     } catch (NoSuchElementException e) {
+                        logger.warn("User {} - No product found with ID {}", currentUser.getName(), fetchId);
                         System.out.println(e.getMessage());
                     }
                     break;
                 case 3:
-                    logger.debug("User chose to add a new product");
+                    logger.debug("User {} attempting to add a new product", currentUser.getName());
                     System.out.print("Enter product ID: ");
                     int id = scanner.nextInt();
                     System.out.print("Enter product name: ");
@@ -56,23 +71,29 @@ public class Menu {
                     System.out.print("Enter product expiration date (YYYY-MM-DD): ");
                     String date = scanner.next();
                     try {
-                        repository.addProduct(new Product(id, name, price, LocalDate.parse(date)));
-                        System.out.println("Product added successfully.");
+                        Product newProduct = new Product(id, name, price, LocalDate.parse(date));
+                        repository.addProduct(newProduct);
+                        logger.info("User {} added product: {} (Price: {})",
+                                currentUser.getName(), name, price);
                     } catch (IllegalArgumentException e) {
+                        logger.error("User {} failed to add product: {}", currentUser.getName(), e.getMessage());
                         System.out.println(e.getMessage());
                     }
                     break;
                 case 4:
+                    logger.debug("User {} attempting to delete a product", currentUser.getName());
                     System.out.print("Enter product ID to delete: ");
                     int deleteId = scanner.nextInt();
                     try {
                         repository.deleteProduct(deleteId);
-                        System.out.println("Product deleted successfully.");
+                        logger.info("User {} deleted product with ID: {}", currentUser.getName(), deleteId);
                     } catch (NoSuchElementException e) {
+                        logger.warn("User {} failed to delete product: {}", currentUser.getName(), e.getMessage());
                         System.out.println(e.getMessage());
                     }
                     break;
                 case 5:
+                    logger.debug("User {} attempting to update a product", currentUser.getName());
                     System.out.print("Enter product ID to update: ");
                     int updateId = scanner.nextInt();
                     System.out.print("Enter new price: ");
@@ -81,15 +102,18 @@ public class Menu {
                     String newDate = scanner.next();
                     try {
                         repository.updateProduct(updateId, newPrice, LocalDate.parse(newDate));
-                        System.out.println("Product updated successfully.");
+                        logger.info("User {} updated product ID: {} (New Price: {})",
+                                currentUser.getName(), updateId, newPrice);
                     } catch (NoSuchElementException e) {
+                        logger.warn("User {} failed to update product: {}", currentUser.getName(), e.getMessage());
                         System.out.println(e.getMessage());
                     }
                     break;
                 case 6:
-                    System.out.println("Exiting program.");
+                    logger.info("User {} logged out", currentUser.getName());
                     return;
                 default:
+                    logger.warn("User {} made invalid choice: {}", currentUser.getName(), choice);
                     System.out.println("Invalid choice. Please try again.");
             }
         }

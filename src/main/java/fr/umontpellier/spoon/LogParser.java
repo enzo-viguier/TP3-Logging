@@ -15,50 +15,44 @@ public class LogParser {
     private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
     private static final Pattern LOG_PATTERN = Pattern.compile(
-            "(\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2})\\s+(INFO|DEBUG|WARN|ERROR)\\s+Menu\\s+-\\s+(.+)"
+            "(\\d{4}-\\d{2}-\\d{2}\\s\\d{2}:\\d{2}:\\d{2})\\s+(INFO|WARN|ERROR|DEBUG)\\s+\\w+\\s+-\\s+(.+)"
     );
-    private static final Pattern USER_NAME_PATTERN = Pattern.compile("(\\w+)\\s+(?:viewing|fetching|added|updated|deleted|searching)");
-    private static final Pattern PRICE_PATTERN = Pattern.compile("Price: (\\d+\\.\\d+)");
-    private static final Pattern PRODUCT_ID_PATTERN = Pattern.compile("ID: (\\d+)");
+    private static final Pattern USER_LOGIN_PATTERN = Pattern.compile("User (\\w+) logged in");
+    private static final Pattern METHOD_PATTERN = Pattern.compile("Executing method: (\\w+)");
+    private static final Pattern PRODUCT_FOUND_PATTERN = Pattern.compile("Product found: ([\\w\\s]+)");
 
     public static class UserProfile {
-        private String userName;
-        private int readOperations;
-        private int writeOperations;
-        private List<Double> searchedPrices;
-        private Set<Integer> searchedIds;
-        private List<String> addedProducts;
-        private LocalDateTime firstSeen;
-        private LocalDateTime lastSeen;
+        String userName;
+        LocalDateTime firstSeen;
+        LocalDateTime lastSeen;
+        int readOperations;
+        int writeOperations;
+        Set<String> productsAccessed;
+        List<String> productsAdded;
+        List<String> productsModified;
+        List<String> productsDeleted;
 
         public UserProfile(String userName, LocalDateTime timestamp) {
             this.userName = userName;
-            this.readOperations = 0;
-            this.writeOperations = 0;
-            this.searchedPrices = new ArrayList<>();
-            this.searchedIds = new HashSet<>();
-            this.addedProducts = new ArrayList<>();
             this.firstSeen = timestamp;
             this.lastSeen = timestamp;
+            this.readOperations = 0;
+            this.writeOperations = 0;
+            this.productsAccessed = new HashSet<>();
+            this.productsAdded = new ArrayList<>();
+            this.productsModified = new ArrayList<>();
+            this.productsDeleted = new ArrayList<>();
         }
 
         public String determineUserType() {
-            double avgSearchPrice = searchedPrices.stream()
-                    .mapToDouble(Double::doubleValue)
-                    .average()
-                    .orElse(0.0);
-
-            // Premium searcher if average search price > 50 and they've done at least 3 searches
-            if (avgSearchPrice > 50.0 && searchedPrices.size() >= 3) {
-                return "PREMIUM_SEARCHER";
-            }
-            // Reader if they do 50% more reads than writes and have done at least 5 operations
-            else if (readOperations > writeOperations * 1.5 && (readOperations + writeOperations) >= 5) {
+            if (readOperations > writeOperations * 1.5 && readOperations >= 5) {
                 return "READER";
-            }
-            // Writer if they do 50% more writes than reads and have done at least 5 operations
-            else if (writeOperations > readOperations * 1.5 && (readOperations + writeOperations) >= 5) {
+            } else if (writeOperations > readOperations * 1.5 && writeOperations >= 5) {
                 return "WRITER";
+            } else if (productsAccessed.stream().anyMatch(p ->
+                    p.contains("Premium") || p.contains("Luxury") ||
+                            p.contains("Organic") || p.contains("Aged"))) {
+                return "PREMIUM_SEARCHER";
             }
             return "BALANCED";
         }
@@ -70,23 +64,18 @@ public class LogParser {
             profile.put("lastSeen", lastSeen.toString());
             profile.put("readOperations", readOperations);
             profile.put("writeOperations", writeOperations);
-            profile.put("totalOperations", readOperations + writeOperations);
 
-            double avgSearchPrice = searchedPrices.stream()
-                    .mapToDouble(Double::doubleValue)
-                    .average()
-                    .orElse(0.0);
-            profile.put("averageSearchPrice", avgSearchPrice);
-            profile.put("numberOfPriceSearches", searchedPrices.size());
+            ArrayNode productsAccessedNode = profile.putArray("productsAccessed");
+            productsAccessed.forEach(productsAccessedNode::add);
 
-            ArrayNode pricesArray = profile.putArray("searchedPrices");
-            searchedPrices.forEach(pricesArray::add);
+            ArrayNode productsAddedNode = profile.putArray("productsAdded");
+            productsAdded.forEach(productsAddedNode::add);
 
-            ArrayNode idsArray = profile.putArray("searchedIds");
-            searchedIds.forEach(idsArray::add);
+            ArrayNode productsModifiedNode = profile.putArray("productsModified");
+            productsModified.forEach(productsModifiedNode::add);
 
-            ArrayNode productsArray = profile.putArray("addedProducts");
-            addedProducts.forEach(productsArray::add);
+            ArrayNode productsDeletedNode = profile.putArray("productsDeleted");
+            productsDeleted.forEach(productsDeletedNode::add);
 
             profile.put("userType", determineUserType());
 
@@ -95,12 +84,13 @@ public class LogParser {
     }
 
     private Map<String, UserProfile> userProfiles = new HashMap<>();
+    private String currentUser = null;
 
     public void parseLogs(String logFile) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(logFile))) {
             String line;
             while ((line = reader.readLine()) != null) {
-                if (line.trim().isEmpty() || line.startsWith("\t")) continue;
+                if (line.trim().isEmpty()) continue;
                 processLogLine(line);
             }
         }
@@ -111,57 +101,62 @@ public class LogParser {
         if (!matcher.find()) return;
 
         LocalDateTime timestamp = LocalDateTime.parse(matcher.group(1), formatter);
+        String level = matcher.group(2);
         String message = matcher.group(3);
 
-        // Extract user name
-        Matcher userMatcher = USER_NAME_PATTERN.matcher(message);
-        if (!userMatcher.find()) return;
+        // Check for user login
+        Matcher loginMatcher = USER_LOGIN_PATTERN.matcher(message);
+        if (loginMatcher.find()) {
+            currentUser = loginMatcher.group(1);
+            userProfiles.computeIfAbsent(currentUser, k -> new UserProfile(k, timestamp));
+            return;
+        }
 
-        String userName = userMatcher.group(1);
-        UserProfile profile = userProfiles.computeIfAbsent(userName,
-                k -> new UserProfile(k, timestamp));
+        if (currentUser == null) return;
+
+        UserProfile profile = userProfiles.get(currentUser);
         profile.lastSeen = timestamp;
 
-        // Update operations count and collect data
-        if (message.contains("viewing") || message.contains("fetching") || message.contains("searching")) {
-            profile.readOperations++;
-
-            // Extract product ID if present
-            Matcher idMatcher = PRODUCT_ID_PATTERN.matcher(message);
-            if (idMatcher.find()) {
-                profile.searchedIds.add(Integer.parseInt(idMatcher.group(1)));
+        // Process method execution
+        Matcher methodMatcher = METHOD_PATTERN.matcher(message);
+        if (methodMatcher.find()) {
+            String method = methodMatcher.group(1);
+            switch (method) {
+                case "getProductById":
+                case "displayProducts":
+                    profile.readOperations++;
+                    break;
+                case "addProduct":
+                case "updateProduct":
+                case "deleteProduct":
+                    profile.writeOperations++;
+                    break;
             }
+        }
 
-            // Extract price if present
-            Matcher priceMatcher = PRICE_PATTERN.matcher(message);
-            if (priceMatcher.find()) {
-                double price = Double.parseDouble(priceMatcher.group(1));
-                profile.searchedPrices.add(price);
-            }
-        } else if (message.contains("added") || message.contains("updated") || message.contains("deleted")) {
-            profile.writeOperations++;
+        // Track accessed products
+        Matcher productMatcher = PRODUCT_FOUND_PATTERN.matcher(message);
+        if (productMatcher.find()) {
+            String productName = productMatcher.group(1);
+            profile.productsAccessed.add(productName);
+        }
 
-            // If it's an add operation, store the product name
-            if (message.contains("added")) {
-                String[] parts = message.split("added product: ");
-                if (parts.length > 1) {
-                    String productName = parts[1].split(" \\(")[0];
-                    profile.addedProducts.add(productName);
-                }
-            }
+        // Track product operations
+        if (message.contains("Product added successfully:")) {
+            String productName = message.split("Product added successfully: ")[1];
+            profile.productsAdded.add(productName);
         }
     }
 
     public void generateProfiles(String outputDir) throws IOException {
         ObjectNode rootNode = mapper.createObjectNode();
 
-        // Create profile groups
-        ObjectNode profileGroups = rootNode.putObject("profileGroups");
+        // Group profiles by type
         Map<String, ArrayNode> typeArrays = new HashMap<>();
-        typeArrays.put("PREMIUM_SEARCHER", profileGroups.putArray("premiumSearchers"));
-        typeArrays.put("READER", profileGroups.putArray("readers"));
-        typeArrays.put("WRITER", profileGroups.putArray("writers"));
-        typeArrays.put("BALANCED", profileGroups.putArray("balanced"));
+        typeArrays.put("PREMIUM_SEARCHER", rootNode.putArray("premiumSearchers"));
+        typeArrays.put("READER", rootNode.putArray("readers"));
+        typeArrays.put("WRITER", rootNode.putArray("writers"));
+        typeArrays.put("BALANCED", rootNode.putArray("balanced"));
 
         // Add profiles to their respective groups
         for (UserProfile profile : userProfiles.values()) {
@@ -172,10 +167,10 @@ public class LogParser {
         // Add statistics
         ObjectNode stats = rootNode.putObject("statistics");
         stats.put("totalUsers", userProfiles.size());
-        stats.put("premiumSearchers", typeArrays.get("PREMIUM_SEARCHER").size());
-        stats.put("readers", typeArrays.get("READER").size());
-        stats.put("writers", typeArrays.get("WRITER").size());
-        stats.put("balanced", typeArrays.get("BALANCED").size());
+        typeArrays.forEach((type, array) -> stats.put(
+                type.toLowerCase() + "Count",
+                array.size()
+        ));
 
         // Create output directory if it doesn't exist
         File outputDirectory = new File(outputDir);
@@ -184,9 +179,5 @@ public class LogParser {
         // Write to file with pretty printing
         mapper.writerWithDefaultPrettyPrinter()
                 .writeValue(new File(outputDir + "/user_profiles.json"), rootNode);
-    }
-
-    public Map<String, UserProfile> getUserProfiles() {
-        return userProfiles;
     }
 }
