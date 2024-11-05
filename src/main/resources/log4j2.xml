@@ -4,14 +4,23 @@
         <Console name="Console" target="SYSTEM_OUT">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} - %m%n"/>
         </Console>
+        <File name="FileAppender" fileName="logs/app.log" append="true" immediateFlush="true">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1} - %m%n"/>
+        </File>
     </Appenders>
     <Loggers>
-        <Root level="info">
+        <Root level="debug">
             <AppenderRef ref="Console"/>
+<!--            <AppenderRef ref="FileAppender"/>-->
         </Root>
-        <!-- Logger spécifique pour la classe Menu -->
-        <Logger name="fr.umontpellier.Menu" level="debug" additivity="false">
+        <Logger name="fr.umontpellier" level="debug" additivity="false">
             <AppenderRef ref="Console"/>
+            <AppenderRef ref="FileAppender"/>
         </Logger>
+
+        <!-- Logger spécifique pour la classe Menu -->
+<!--        <Logger name="fr.umontpellier.Menu" level="debug" additivity="false">-->
+<!--            <AppenderRef ref="Console"/>-->
+<!--        </Logger>-->
     </Loggers>
 </Configuration>

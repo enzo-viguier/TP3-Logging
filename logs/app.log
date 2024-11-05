@@ -1,0 +1,5 @@
+2024-11-05 08:31:45 INFO  Menu - Menu started
+2024-11-05 08:31:48 INFO  Menu - User selected option: 3
+2024-11-05 08:31:48 DEBUG Menu - User chose to add a new product
+2024-11-05 08:31:55 INFO  Menu - Product added successfully: Pain
+2024-11-05 08:31:57 INFO  Menu - User selected option: 6
