@@ -15,7 +15,6 @@ public class Product {
         this.expirationDate = expirationDate;
     }
 
-    // Getters and setters
     public int getId() {
         return id;
     }

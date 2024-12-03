@@ -1,0 +1,134 @@
+{
+  "premiumSearchers" : [ {
+    "userName" : "Emma_Manager",
+    "firstSeen" : "2024-12-03T09:13",
+    "lastSeen" : "2024-12-03T09:13",
+    "readOperations" : 10,
+    "writeOperations" : 14,
+    "productsAccessed" : [ "Organic Truffles", "Aged Wine", "Eggs", "Milk" ],
+    "productsAdded" : [ "Coffee", "Coffee", "Apple" ],
+    "productsModified" : [ ],
+    "productsDeleted" : [ ],
+    "userType" : "PREMIUM_SEARCHER"
+  } ],
+  "readers" : [ {
+    "userName" : "Lisa_Premium",
+    "firstSeen" : "2024-12-03T09:13:01",
+    "lastSeen" : "2024-12-03T09:13:01",
+    "readOperations" : 17,
+    "writeOperations" : 3,
+    "productsAccessed" : [ "Aged Wine" ],
+    "productsAdded" : [ "Cereal", "Sugar" ],
+    "productsModified" : [ ],
+    "productsDeleted" : [ ],
+    "userType" : "READER"
+  }, {
+    "userName" : "Tom_HighEnd",
+    "firstSeen" : "2024-12-03T09:13:01",
+    "lastSeen" : "2024-12-03T09:13:01",
+    "readOperations" : 19,
+    "writeOperations" : 1,
+    "productsAccessed" : [ "Aged Wine" ],
+    "productsAdded" : [ "Pasta" ],
+    "productsModified" : [ ],
+    "productsDeleted" : [ ],
+    "userType" : "READER"
+  }, {
+    "userName" : "Alice_Researcher",
+    "firstSeen" : "2024-12-03T09:13",
+    "lastSeen" : "2024-12-03T09:13",
+    "readOperations" : 19,
+    "writeOperations" : 1,
+    "productsAccessed" : [ "Caviar", "Aged Wine", "Luxury Chocolate" ],
+    "productsAdded" : [ "Salt" ],
+    "productsModified" : [ ],
+    "productsDeleted" : [ ],
+    "userType" : "READER"
+  }, {
+    "userName" : "David_Luxury",
+    "firstSeen" : "2024-12-03T09:13:01",
+    "lastSeen" : "2024-12-03T09:13:01",
+    "readOperations" : 15,
+    "writeOperations" : 8,
+    "productsAccessed" : [ "Aged Wine" ],
+    "productsAdded" : [ "Salt" ],
+    "productsModified" : [ ],
+    "productsDeleted" : [ ],
+    "userType" : "READER"
+  }, {
+    "userName" : "Bob_Viewer",
+    "firstSeen" : "2024-12-03T09:13",
+    "lastSeen" : "2024-12-03T09:13",
+    "readOperations" : 20,
+    "writeOperations" : 2,
+    "productsAccessed" : [ "Caviar", "Cheese", "Aged Wine", "Luxury Chocolate", "Bread", "Milk" ],
+    "productsAdded" : [ ],
+    "productsModified" : [ ],
+    "productsDeleted" : [ ],
+    "userType" : "READER"
+  }, {
+    "userName" : "John_Analyst",
+    "firstSeen" : "2024-12-03T09:13",
+    "lastSeen" : "2024-12-03T09:13",
+    "readOperations" : 16,
+    "writeOperations" : 4,
+    "productsAccessed" : [ "Organic Truffles", "Yogurt", "Cheese", "Aged Wine", "Milk" ],
+    "productsAdded" : [ "Cereal", "Banana", "Pepper" ],
+    "productsModified" : [ ],
+    "productsDeleted" : [ ],
+    "userType" : "READER"
+  }, {
+    "userName" : "Anna_Executive",
+    "firstSeen" : "2024-12-03T09:13:01",
+    "lastSeen" : "2024-12-03T09:13:01",
+    "readOperations" : 20,
+    "writeOperations" : 0,
+    "productsAccessed" : [ "Aged Wine" ],
+    "productsAdded" : [ ],
+    "productsModified" : [ ],
+    "productsDeleted" : [ ],
+    "userType" : "READER"
+  } ],
+  "writers" : [ {
+    "userName" : "Mike_Inventory",
+    "firstSeen" : "2024-12-03T09:13",
+    "lastSeen" : "2024-12-03T09:13",
+    "readOperations" : 6,
+    "writeOperations" : 19,
+    "productsAccessed" : [ "Milk" ],
+    "productsAdded" : [ "Sugar", "Orange", "Apple", "Cereal", "Banana", "Coffee", "Sugar", "Sugar" ],
+    "productsModified" : [ ],
+    "productsDeleted" : [ ],
+    "userType" : "WRITER"
+  }, {
+    "userName" : "Interactive_User",
+    "firstSeen" : "2024-12-03T09:12:59",
+    "lastSeen" : "2024-12-03T09:13",
+    "readOperations" : 0,
+    "writeOperations" : 10,
+    "productsAccessed" : [ ],
+    "productsAdded" : [ "Premium Coffee", "Organic Truffles", "Aged Wine", "Luxury Chocolate", "Caviar", "Milk", "Bread", "Cheese", "Yogurt", "Eggs" ],
+    "productsModified" : [ ],
+    "productsDeleted" : [ ],
+    "userType" : "WRITER"
+  } ],
+  "balanced" : [ {
+    "userName" : "Sarah_Stock",
+    "firstSeen" : "2024-12-03T09:13:01",
+    "lastSeen" : "2024-12-03T09:13:01",
+    "readOperations" : 10,
+    "writeOperations" : 13,
+    "productsAccessed" : [ ],
+    "productsAdded" : [ "Tea", "Pasta", "Coffee", "Orange" ],
+    "productsModified" : [ ],
+    "productsDeleted" : [ ],
+    "userType" : "BALANCED"
+  } ],
+  "statistics" : {
+    "totalUsers" : 11,
+    "premium_searcherCount" : 1,
+    "balancedCount" : 1,
+    "writerCount" : 2,
+    "readerCount" : 7
+  }
+}
