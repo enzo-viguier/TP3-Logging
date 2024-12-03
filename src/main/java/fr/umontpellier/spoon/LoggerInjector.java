@@ -15,7 +15,6 @@ import java.util.Set;
 public class LoggerInjector {
 
     public static void main(String[] args) {
-        // Initialisation de Spoon
         Launcher launcher = new Launcher();
         launcher.addInputResource("src/main/java"); // Indique le répertoire source de ton projet
         launcher.buildModel();
@@ -26,16 +25,13 @@ public class LoggerInjector {
             if (type instanceof CtClass) {
                 CtClass<?> ctClass = (CtClass<?>) type;
 
-                // Ajouter un logger si la classe n'en a pas
                 addLoggerIfAbsent(ctClass, factory);
 
-                // Ajouter des logs dans chaque méthode
                 ctClass.getMethods().forEach(method -> addLogging(method, factory));
             }
         });
 
-        // Générer le code transformé
-        launcher.setSourceOutputDirectory("spooned"); // Dossier où Spoon sauvegardera les fichiers modifiés
+        launcher.setSourceOutputDirectory("spooned");
         launcher.prettyprint();
     }
 
@@ -59,7 +55,6 @@ public class LoggerInjector {
     }
 
     private static void addLogging(CtMethod<?> method, Factory factory) {
-        // Crée une invocation de log "logger.info(...)"
         CtTypeReference<org.apache.logging.log4j.Logger> loggerType = factory.createCtTypeReference(org.apache.logging.log4j.Logger.class);
 
         CtExecutableReference<Void> infoMethod = factory.createExecutableReference();
@@ -72,7 +67,6 @@ public class LoggerInjector {
         infoMethod.setSimpleName("info");
         infoMethod.setType(factory.Type().VOID_PRIMITIVE);
 
-        // Injecter le log au début de la méthode
         method.getBody().insertBegin(logInfo);
     }
 }

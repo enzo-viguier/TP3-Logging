@@ -10,7 +10,7 @@ public class TestScenarios {
 
     // Test users with different profiles and their behavior weights
     private static final List<TestUser> users = Arrays.asList(
-            // Readers (more likely to perform read operations)
+            // Readers
             new TestUser(new User(1, "John_Analyst", 45, "john@company.com", "pass123"),
                     new BehaviorProfile(0.7, 0.2, 0.1)), // 70% read, 20% write, 10% premium searches
             new TestUser(new User(2, "Alice_Researcher", 32, "alice@company.com", "pass456"),
@@ -18,7 +18,7 @@ public class TestScenarios {
             new TestUser(new User(3, "Bob_Viewer", 25, "bob@company.com", "pass789"),
                     new BehaviorProfile(0.75, 0.15, 0.1)),
 
-            // Writers (more likely to perform write operations)
+            // Writers
             new TestUser(new User(4, "Emma_Manager", 38, "emma@company.com", "pass321"),
                     new BehaviorProfile(0.2, 0.7, 0.1)),
             new TestUser(new User(5, "Mike_Inventory", 22, "mike@company.com", "pass654"),
@@ -26,7 +26,7 @@ public class TestScenarios {
             new TestUser(new User(6, "Sarah_Stock", 41, "sarah@company.com", "pass987"),
                     new BehaviorProfile(0.15, 0.75, 0.1)),
 
-            // Premium searchers (more likely to search expensive products)
+            // Premium searchers
             new TestUser(new User(7, "David_Luxury", 29, "david@company.com", "pass147"),
                     new BehaviorProfile(0.2, 0.2, 0.6)),
             new TestUser(new User(8, "Lisa_Premium", 35, "lisa@company.com", "pass258"),
@@ -101,7 +101,7 @@ public class TestScenarios {
             menu.setCurrentUser(testUser.user);
             executeUserScenarios(repository, testUser);
             try {
-                Thread.sleep(100); // Pause between users
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 Thread.currentThread().interrupt();
             }
@@ -142,7 +142,6 @@ public class TestScenarios {
                 try {
                     Product product = repository.getProductById(randomId);
                 } catch (Exception e) {
-                    // Log handled in repository
                 }
                 break;
         }
@@ -169,7 +168,6 @@ public class TestScenarios {
         try {
             Product product = repository.getProductById(productId);
         } catch (Exception e) {
-            // Log handled in repository
         }
     }
 
@@ -196,7 +194,6 @@ public class TestScenarios {
         try {
             repository.updateProduct(id, newPrice, newDate);
         } catch (Exception e) {
-            // Log handled in repository
         }
     }
 
@@ -205,7 +202,6 @@ public class TestScenarios {
         try {
             repository.deleteProduct(id);
         } catch (Exception e) {
-            // Log handled in repository
         }
     }
 }

@@ -36,7 +36,8 @@ public class Menu {
             System.out.println("3. Add product");
             System.out.println("4. Delete product");
             System.out.println("5. Update product");
-            System.out.println("6. Exit");
+            System.out.println("6. Generate test scenarios");
+            System.out.println("7. Exit");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
 
@@ -110,6 +111,9 @@ public class Menu {
                     }
                     break;
                 case 6:
+                    TestScenarios.main(null);
+                    return;
+                case 7:
                     logger.info("User {} logged out", currentUser.getName());
                     return;
                 default:
